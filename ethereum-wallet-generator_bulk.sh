@@ -31,12 +31,12 @@ if [ "$keysAmount" -eq "$keysAmount" ] 2>/dev/null; then #this checks if input i
 				# get the keecak hash, removing the trailing ' -' and taking the last 40 chars
 				# https://github.com/maandree/sha3sum
 				addr=0x$(echo $pub | lib/$arch/keccak-256sum -x -l | tr -d ' -' | tail -c 41)
-				
+
 				echo "$priv;$pub;$addr";
+
+				echo "$addr" >> $1
 			done
 	fi
 else
 	echo not a number;
 fi
-
-
