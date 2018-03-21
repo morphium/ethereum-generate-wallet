@@ -10,7 +10,7 @@ fi
 echo "# Ethereum Wallet Generator"
 echo "# How many keypairs would you like to generate? (type in the number you would like, e.g '5' will generate 5 keypairs.)"
 
-read keysAmount
+keysAmount=$1
 
 if [ "$keysAmount" -eq "$keysAmount" ] 2>/dev/null; then #this checks if input is numeric
 	if [ $keysAmount -eq "0" ]; then
@@ -34,7 +34,7 @@ if [ "$keysAmount" -eq "$keysAmount" ] 2>/dev/null; then #this checks if input i
 
 				echo "$priv;$pub;$addr";
 
-				echo "$addr" >> $1
+				echo "$addr" >> $2
 			done
 	fi
 else
